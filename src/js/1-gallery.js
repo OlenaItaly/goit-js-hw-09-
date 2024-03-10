@@ -2,10 +2,10 @@
 import SimpleLightbox from "simplelightbox";
 // // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
-const lightbox = new SimpleLightbox('.gallery-link', {
-  captionsData: 'alt',
-  captionDelay: 250,
-});
+// const lightbox = new SimpleLightbox('.gallery-link', {
+//   captionsData: 'alt',
+//   captionDelay: 250,
+// });
 
 
 const images = [
@@ -89,10 +89,15 @@ const imgElem = images.map(({ preview, original, description}) => {
 
 galleryContainer.insertAdjacentHTML("beforeend", imgElem);
 
+const lightbox = new SimpleLightbox('.gallery-link', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+
 // Описаний в документації
 // import SimpleLightbox from "simplelightbox";
 // // Додатковий імпорт стилів
-import "simplelightbox/dist/simple-lightbox.min.css";
+// import "simplelightbox/dist/simple-lightbox.min.css";
 // const lightbox = new SimpleLightbox('.gallery-link', {
 //   captionsData: 'alt',
 //   captionDelay: 250,
