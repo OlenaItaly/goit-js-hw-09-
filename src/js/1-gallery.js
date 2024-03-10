@@ -80,14 +80,7 @@ const imgElem = images.map(({ preview, original, description}) => {
 galleryContainer.insertAdjacentHTML("beforeend", imgElem);
 
 // Описаний в документації
-import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
-import "simplelightbox/dist/simple-lightbox.min.css";
-const lightbox = new SimpleLightbox('.gallery-link', {
-  captionsData: 'alt',
-  captionDelay: 250,
-});
-// // <li class="gallery-item">
+// // // <li class="gallery-item">
 // 	<a class="gallery-link" href="large-image.jpg">
 // 		<img 
 // 			class="gallery-image" 
