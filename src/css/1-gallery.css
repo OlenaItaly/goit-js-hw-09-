@@ -1,0 +1,22 @@
+
+.gallery {
+  list-style: none;
+  display: flex ;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  Width: 1440px;
+
+
+}
+.gallery:hover {
+ cursor: pointer;
+}
+
+.gallery-image {
+ width: 360px;
+ height: 200px; 
+}
