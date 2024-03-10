@@ -1,4 +1,4 @@
-import"./assets/modulepreload-polyfill-3cfb730f.js";const a=document.querySelector(".form"),r=`
+import"./assets/styles-68e5b5ab.js";const a=document.querySelector(".form"),r=`
 <form class="login-form">
       <label class="label-task4">
         Email
