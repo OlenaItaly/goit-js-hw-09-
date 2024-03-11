@@ -1,13 +1,2 @@
-import"./assets/styles-68e5b5ab.js";const a=document.querySelector(".form"),r=`
-<form class="login-form">
-      <label class="label-task4">
-        Email
-        <input type="email" name="email" class="input-task4" />
-      </label>
-      <label class="label-task4">
-        Password
-        <input type="password" name="password" class="input-task4"/>
-      </label>
-      <button type="submit" class="btn-task4">Login</button>
-    </form>`;a.insertAdjacentHTML("beforeend",r);const n=document.querySelector(".login-form");n.addEventListener("submit",o);function o(e){e.preventDefault();const{email:t,password:l}=e.currentTarget.elements;if(t.value.trim()===""||l.value.trim()==="")return alert("All form fields must be filled in");const s={email:t.value.trim(),password:l.value.trim()};console.log(s),e.currentTarget.reset()}
+import"./assets/styles-05640b82.js";const t=document.querySelector(".js-form"),o=t.elements.email,n=t.elements.message;let e={email:"",message:""};const s=JSON.parse(localStorage.getItem("feedback-form-state"));s!==null&&(n.value=s.message,o.value=s.email,e=s);t.addEventListener("input",a=>{const l=a.currentTarget.elements.email.value,m=a.currentTarget.elements.message.value;e.email=l.trim(),e.message=m.trim(),localStorage.setItem("feedback-form-state",JSON.stringify(e))});t.addEventListener("submit",a=>{a.preventDefault(),e.email.length==0||e.message.length==0?console.log("please fill all field"):(console.log(e),localStorage.removeItem("feedback-form-state"),t.reset(),e.email="",e.message="")});
 //# sourceMappingURL=commonHelpers2.js.map
