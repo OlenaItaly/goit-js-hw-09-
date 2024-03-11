@@ -1,29 +1,36 @@
-const formDIV = document.querySelector('.form');
+const formSet = document.querySelector('.js-form');
+const inputinfo = formSet.elements.email;
+const areainfo = formSet.elements.message;
+let saveinfo = { email: '', message: '' };
 
-const element = `
-<form class="login-form">
-      <label class="label-task4">
-        Email
-        <input type="email" name="email" class="input-task4" />
-      </label>
-      <label class="label-task4">
-        Password
-        <input type="password" name="password" class="input-task4"/>
-      </label>
-      <button type="submit" class="btn-task4">Login</button>
-    </form>`
-formDIV.insertAdjacentHTML("beforeend", element);
-const formEL = document.querySelector('.login-form');
-formEL.addEventListener('submit', handlerSubmit);
-function handlerSubmit(evt) {
-    evt.preventDefault();
-    const { email, password } = evt.currentTarget.elements;
-    // console.log(email, email.value);
-    // console.log(password, password.value);
-    if (email.value.trim() === "" || password.value.trim() === "") {
-       return alert( 'All form fields must be filled in');
-    } 
-    const result = { email: email.value.trim(), password: password.value.trim() }
-    console.log(result);
-    evt.currentTarget.reset();
+const parsedinfo = JSON.parse(localStorage.getItem('feedback-form-state'));
+
+if (parsedinfo !== null) {
+  areainfo.value = parsedinfo.message;
+  inputinfo.value = parsedinfo.email;
+
+  saveinfo = parsedinfo;
 }
+
+formSet.addEventListener('input', event => {
+  const email = event.currentTarget.elements.email.value;
+  const message = event.currentTarget.elements.message.value;
+
+  saveinfo.email = email.trim();
+  saveinfo.message = message.trim();
+  localStorage.setItem('feedback-form-state', JSON.stringify(saveinfo));
+});
+
+formSet.addEventListener('submit', evt => {
+  evt.preventDefault();
+
+  if (saveinfo.email.length == 0 || saveinfo.message.length == 0) {
+    console.log(`please fill all field`);
+  } else {
+    console.log(saveinfo);
+    localStorage.removeItem('feedback-form-state');
+    formSet.reset();
+    saveinfo.email = '';
+    saveinfo.message = '';
+  }
+});

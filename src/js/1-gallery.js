@@ -2,10 +2,7 @@
 import SimpleLightbox from "simplelightbox";
 // // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
-// const lightbox = new SimpleLightbox('.gallery-link', {
-//   captionsData: 'alt',
-//   captionDelay: 250,
-// });
+
 
 
 const images = [
@@ -94,20 +91,3 @@ const lightbox = new SimpleLightbox('.gallery-link', {
   captionDelay: 250,
 });
 
-// Описаний в документації
-// import SimpleLightbox from "simplelightbox";
-// // Додатковий імпорт стилів
-// import "simplelightbox/dist/simple-lightbox.min.css";
-// const lightbox = new SimpleLightbox('.gallery-link', {
-//   captionsData: 'alt',
-//   captionDelay: 250,
-// });
-// // <li class="gallery-item">
-// 	<a class="gallery-link" href="large-image.jpg">
-// 		<img 
-// 			class="gallery-image" 
-// 			src="small-image.jpg" 
-// 			alt="Image description" 
-// 			/>
-// 	</a>
-// // </li>
